@@ -35,6 +35,9 @@ Features:
   <Requires/>
   <Shell>bash</Shell>
   <Changes>
+### v1.3.2
+- PUID/PGID support via gosu entrypoint (no more chmod 777 workaround)
+
 ### v1.3.1
 - Fixed Wallos import format compatibility
 - Added German README
@@ -93,6 +96,26 @@ Features:
     Display="always"
     Required="false"
     Mask="false">false</Config>
+
+  <Config
+    Name="PUID"
+    Target="PUID"
+    Default="99"
+    Description="User ID for file permissions (default: nobody)"
+    Type="Variable"
+    Display="always"
+    Required="false"
+    Mask="false">99</Config>
+
+  <Config
+    Name="PGID"
+    Target="PGID"
+    Default="100"
+    Description="Group ID for file permissions (default: users)"
+    Type="Variable"
+    Display="always"
+    Required="false"
+    Mask="false">100</Config>
 
   <Config
     Name="TZ"
